@@ -9,9 +9,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <WelcomeMessage/>
-        </div>
+      <div> <WelcomeMessage/></div>
     </>
   )
 }
