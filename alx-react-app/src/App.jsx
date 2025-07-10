@@ -1,4 +1,8 @@
+import React from 'react'
 import WelcomeMessage from './components/WelcomeMessage'
+import Header from './components/Header'
+import MainContent from './components/MainContent'
+import Footer from './components/Footer.jsx'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -8,10 +12,14 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div> <WelcomeMessage/></div>
-    </>
+    
+      <div> 
+      <Header/>
+      <MainContent/>
+      <Footer/>
+        </div>
+    
   )
 }
 
-export default App
+export default App;
