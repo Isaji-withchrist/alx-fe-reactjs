@@ -1,5 +1,6 @@
 import React from "react";
 const UserProfile = (props) => {
+    const userData= useContext(UserContext);
     return(
         <div>
             <h2>{props.name}</h2>
