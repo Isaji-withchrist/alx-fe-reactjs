@@ -9,7 +9,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import ProfilePage from './components/ProfilePage'
-import UserContext from './UserContext'
+import UserContext from './components/UserContext'
+import UserDetails from './components/UserDetails'
 
 function App() {
   const userData= {name: "Jane Doe", email: "janedoe@example.com"};
