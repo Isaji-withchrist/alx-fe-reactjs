@@ -7,6 +7,7 @@ function Navbar() {
             padding: '1rem',
             display: 'flex',
             gap: '1rem',
+            justifyContent:'center'
         }}
         >
             <Link style={{color:'white', textDecoration:'none'}} to="/">Home</Link>
