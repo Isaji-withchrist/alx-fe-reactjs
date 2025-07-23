@@ -10,7 +10,8 @@ function App() {
     <>
       <div>
         <RecipeList/>
-      
+        <AddRecipeForm/>
+        <recipeStore/>
         </div>
     </>
   )
