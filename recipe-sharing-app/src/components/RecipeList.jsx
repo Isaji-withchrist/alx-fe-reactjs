@@ -1,4 +1,5 @@
 // RecipeList.jsx
+import { Link } from 'react-router-dom';
 import useRecipeStore from './recipeStore';
 import SearchBar from './SearchBar';
 
@@ -15,7 +16,9 @@ const RecipeList = () => {
         <div className="space-y-4 mt-6">
           {filteredRecipes.map((recipe) => (
             <div key={recipe.id} className="p-4 border rounded shadow">
+                <link to={'/recipes/${recipe.id}'}>
               <h3 className="text-xl font-semibold">{recipe.title}</h3>
+              </link>
               <p className="text-gray-700">{recipe.description}</p>
               {recipe.ingredients && (
                 <p className="text-sm text-gray-500 mt-2">
