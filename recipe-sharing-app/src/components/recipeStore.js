@@ -4,6 +4,27 @@ const useRecipeStore = create((set) => ({
   recipes: [],
   searchTerm: '',
   filteredRecipes: [],
+  favorites: [],
+  recommendations: [],
+
+  addFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: [...state.favorites, recipeId],
+    })),
+
+  removeFavorite: (recipeId) =>
+    set((state) => ({
+      favorites: state.favorites.filter((id) => id !== recipeId),
+    })),
+
+  generateRecommendations: () =>
+    set((state) => {
+      const recommended = state.recipes.filter(
+        (recipe) =>
+          state.favorites.includes(recipe.id) && Math.random() > 0.5
+      );
+      return { recommendations: recommended };
+    }),
 
   setSearchTerm: (term) =>
     set((state) => ({
@@ -21,8 +42,8 @@ const useRecipeStore = create((set) => ({
   addRecipe: (newRecipe) =>
     set((state) => {
       const updated = [...state.recipes, newRecipe];
+      const term = state.searchTerm.toLowerCase();
       const filtered = updated.filter((r) => {
-        const term = state.searchTerm.toLowerCase();
         return (
           r.title?.toLowerCase().includes(term) ||
           r.ingredients?.some((i) => i.toLowerCase().includes(term)) ||
@@ -35,8 +56,9 @@ const useRecipeStore = create((set) => ({
   deleteRecipe: (id) =>
     set((state) => {
       const updated = state.recipes.filter((r) => r.id !== id);
+      const term = state.searchTerm.toLowerCase();
       const filtered = updated.filter((r) =>
-        r.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+        r.title?.toLowerCase().includes(term)
       );
       return { recipes: updated, filteredRecipes: filtered };
     }),
@@ -46,8 +68,9 @@ const useRecipeStore = create((set) => ({
       const updated = state.recipes.map((r) =>
         r.id === updatedRecipe.id ? { ...r, ...updatedRecipe } : r
       );
+      const term = state.searchTerm.toLowerCase();
       const filtered = updated.filter((r) =>
-        r.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+        r.title?.toLowerCase().includes(term)
       );
       return { recipes: updated, filteredRecipes: filtered };
     }),

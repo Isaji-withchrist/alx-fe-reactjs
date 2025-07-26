@@ -4,6 +4,8 @@ import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
 import EditRecipeForm from './components/EditRecipeForm';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
         <Route path="/add" element={<AddRecipeForm />} />
         <Route path="/recipes/:id" element={<RecipeDetails />} />
         <Route path="/recipes/:id/edit" element={<EditRecipeForm />} />
+        <Route path='/favorites' element={<FavoritesList/>}/>
+        <Route path='/recommendations' element={<RecommendationsList/>}/>
       </Routes>
     </div>
     </BrowserRouter>

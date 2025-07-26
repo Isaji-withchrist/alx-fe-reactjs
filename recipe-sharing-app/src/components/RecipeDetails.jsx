@@ -1,7 +1,8 @@
 // src/components/RecipeDetails.jsx
 import useRecipeStore from '../components/recipeStore';
-import { useParams } from 'react-router-dom';
+import { Route, useParams } from 'react-router-dom';
 import DeleteRecipeButton from './DeleteRecipeButton';
+import RecommendationsList from './RecommendationsList';
 
 const RecipeDetails = () => {
   const { id } = useParams();
@@ -19,6 +20,7 @@ const RecipeDetails = () => {
       <p className="mb-4">{recipe.description}</p>
 
       <DeleteRecipeButton id={recipe.id} />
+      <Route path='/recommendations' element={<RecommendationsList/>}/>
     </div>
   );
 };
