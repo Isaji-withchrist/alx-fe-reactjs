@@ -13,15 +13,15 @@ const Search= () => {
         setError('');
         setUserData(null);
 
-        try{
+        try {
             const data = await fetchUserData(username);
             setUserData(data);
-        } catch (err){
-            setError('Looks like we can\'t find the user');
-        } finally {
+          } catch (err) {
+            setError("Looks like we cant find the user");
+          } finally {
             setLoading(false);
-        }
-    };
+          }
+        };
     return(
         <div className="max-w-md mx-auto mt-10 p-4 border rounded shadow">
             <form onSubmit={handleSubmit} className="flex gap-2 md-4">
