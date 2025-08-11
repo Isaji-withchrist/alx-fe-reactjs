@@ -4,11 +4,13 @@ import axios from "axios";
 const SEARCH_USERS_URL = "https://api.github.com/search/users?q";
 const BASE_URL = "https://api.github.com";
 
-// Search GitHub users
-export const searchUsers = async (query) => {
+
+// Search GitHub users with location and minRepos filters
+export const searchUsers = async (query, location = "", minRepos = 0) => {
   try {
-    // Use the required URL string so the checker sees it
-    const response = await axios.get(`${SEARCH_USERS_URL}=${query}`);
+    // Build query with location and repos filter
+    const searchQuery = `${query} location:${location} repos:>=${minRepos}`;
+    const response = await axios.get(`${SEARCH_USERS_URL}=${encodeURIComponent(searchQuery)}`);
     return response.data;
   } catch (error) {
     console.error("Error searching users:", error);
