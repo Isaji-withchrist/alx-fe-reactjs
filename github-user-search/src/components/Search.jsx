@@ -1,6 +1,6 @@
 // src/components/Search.jsx
 import { useState } from "react";
-import { searchUsers, fetchUserData } from "../services/githubService";
+import { fetchUserData } from "../services/githubService";
 
 export default function Search() {
   const [username, setUsername] = useState("");
@@ -16,8 +16,7 @@ export default function Search() {
       setLoading(true);
       setError("");
 
-      const currentPage = resetPage ? 1 : page;
-      const results = await searchUsers(username, location, minRepos, currentPage);
+      const results = await fetchUserData(username, location, minRepos, page);
 
       if (resetPage) {
         setUsers(results);
@@ -90,8 +89,17 @@ export default function Search() {
             />
             <div>
               <h2 className="text-lg font-bold">{user.login}</h2>
-              <p>Profile: <a className="text-blue-600" href={user.html_url} target="_blank" rel="noreferrer">View</a></p>
-              {/* For extra details like location & repo count, you’d fetch user data */}
+              <p>
+                Profile:{" "}
+                <a
+                  className="text-blue-600"
+                  href={user.html_url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View
+                </a>
+              </p>
             </div>
           </div>
         ))}
