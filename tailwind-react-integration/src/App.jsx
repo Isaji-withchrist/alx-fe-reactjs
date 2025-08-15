@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import UserProfile from '../public/components/UserProfile'
+import UserProfile from './components/UserProfile'
 
 function App() {
   return (
