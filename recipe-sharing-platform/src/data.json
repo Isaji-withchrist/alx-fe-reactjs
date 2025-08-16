@@ -3,12 +3,82 @@
       "id": 1,
       "title": "Spaghetti Carbonara",
       "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "src/assets/spaghetti-carbonara-recipe-snippet.jpg"
+      "image": "src/assets/spaghetti-carbonara-recipe-snippet.jpg",
+      "ingredients": [
+        "200g spaghetti",
+        "100g pancetta",
+        "2 large eggs",
+        "50g parmesan cheese",
+        "Black pepper",
+        "Salt"
+      ],
+      "instructions": ["Cook pasta. Fry pancetta. Beat eggs with parmesan. Combine pasta, pancetta, and egg mixture. Serve immediately."]
     },
     {
       "id": 2,
       "title": "Chicken Tikka Masala",
       "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "src/assets/Chicken-Tikka-Masala_3-1.webp"
+      "image": "src/assets/Chicken-Tikka-Masala_3-1.webp",
+      "ingredients": [
+        "500g chicken breast",
+        "200g yogurt",
+        "2 tbsp garam masala",
+        "400g tomato puree",
+        "200ml cream",
+        "Garlic & ginger paste"
+      ],
+      "instructions": ["Marinate chicken in yogurt and spices. Grill until cooked. Simmer tomato puree with cream and spices. Add chicken, stir, and serve hot."]
+    },
+    {
+        "id":3,
+        "title": "Smokey Jollof",
+        "summary": "Smokey Jollof is made with long-grain rice, tomatoes, chilis, onions, spices, and sometimes other vegetables and/or meat.",
+        "image": "src/assets/smoky-jollof.jpg",
+        "ingredients":[
+        "3 cups of Rice (The Golden Sella basmati rice is an absolute fav)",
+        "3 big Onion bulbs",
+        "8 medium sized Tomatoes",
+        "4 pieces Scotch bonnet pepper (Rodo)",
+        "5 pieces Cayenne pepper (shombo)",
+        "3 local Red bell peppers (Tatashe)",
+        "1 Gino pepper onion paste",
+        "1 Tasty Tom Jollof paste",
+        "Half a cup of Chicken stock",
+        "Bouillion cubes",
+        "3/4 cup of Cooking oil",
+        "1 tsp Curry",
+        "1 tsp Thyme",
+        "Spices of your choice 1/2 tsp each (cayenne, paprika, white pepper and bay leaves)"],
+        "instructions":  [
+            "Blend tomatoes, red bell peppers, onions, and scotch bonnet peppers into a smooth paste.",
+            "Heat oil in a pot, sauté sliced onions, and fry the blended mix until thickened and oil separates.",
+            "Add tomato paste, curry powder, thyme, bay leaves, bouillon cubes, and salt. Stir well.",
+            "Add washed rice, chicken stock, and water. Stir gently to combine.",
+            "Cover and cook on low heat until rice is soft and liquid is absorbed.",
+            "Fluff with a fork and serve hot with fried plantains or grilled chicken."]
+    },
+    {
+        "id": 4,
+        "title": "Spicy Noodles",
+        "summary": "Mouthwatering Spicy Noodles that packed with flavor and easy to make.",
+        "image": "src/assets/a7a8d4baa0b75869a058c859c49a6d6f.jpg",
+        "ingredients": [
+            "2 packs instant noodles",
+            "2 tbsp vegetable oil",
+            "2 cloves garlic, minced",
+            "1 small onion, sliced",
+            "1 tbsp chili paste",
+            "1 tbsp soy sauce",
+            "1 tsp sesame oil",
+            "1 green chili, sliced",
+            "1 spring onion, chopped"
+          ],
+          "instructions": [
+            "Cook noodles according to package instructions, drain, and set aside.",
+            "Heat vegetable oil in a pan, sauté garlic and onions until fragrant.",
+            "Add chili paste, soy sauce, and sesame oil. Stir well.",
+            "Toss in the cooked noodles and mix until evenly coated.",
+            "Add sliced green chili and spring onions, stir for 1 minute.",
+            "Serve hot, optionally with a fried egg on top."]
     }
   ]
