@@ -1,43 +1,30 @@
-
-import React from "react";
+// src/components/RegistrationForm.jsx
 import { useState } from "react";
 
 export default function RegistrationForm() {
-  // state for inputs
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-
-  // state for error messages
+  // separate states for each field
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  // handle input changes (controlled components)
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  // handle form submission
+  // handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // basic validation
-    if (!formData.username || !formData.email || !formData.password) {
+    if (!username || !email || !password) {
       setError("All fields are required.");
       return;
     }
 
-    setError(""); // clear error if valid
-    console.log("Form Submitted:", formData);
+    setError("");
+    console.log("Form Submitted:", { username, email, password });
 
-    // You can now send formData to backend or API
-    // reset form after submission
-    setFormData({ username: "", email: "", password: "" });
+    // reset fields
+    setUsername("");
+    setEmail("");
+    setPassword("");
   };
 
   return (
@@ -51,9 +38,8 @@ export default function RegistrationForm() {
           <label className="block mb-1 font-medium">Username</label>
           <input
             type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
+            value={username}          // ✅ explicitly uses value={username}
+            onChange={(e) => setUsername(e.target.value)}
             className="w-full px-3 py-2 border rounded-lg focus:ring focus:ring-blue-300"
           />
         </div>
@@ -63,9 +49,8 @@ export default function RegistrationForm() {
           <label className="block mb-1 font-medium">Email</label>
           <input
             type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}             // ✅ explicitly uses value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="w-full px-3 py-2 border rounded-lg focus:ring focus:ring-blue-300"
           />
         </div>
@@ -75,9 +60,8 @@ export default function RegistrationForm() {
           <label className="block mb-1 font-medium">Password</label>
           <input
             type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
+            value={password}          // ✅ explicitly uses value={password}
+            onChange={(e) => setPassword(e.target.value)}
             className="w-full px-3 py-2 border rounded-lg focus:ring focus:ring-blue-300"
           />
         </div>
