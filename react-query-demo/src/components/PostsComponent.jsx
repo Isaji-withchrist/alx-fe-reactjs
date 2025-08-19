@@ -13,12 +13,17 @@ export default function PostsComponent() {
     error,
     isLoading,
     isError,
-    refetch,          // ✅ gives us a manual refetch function
-    isFetching,       // ✅ tells us if a background refetch is happening
+    refetch,
+    isFetching,
   } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
-    staleTime: 1000 * 60 * 5, // ✅ cache fresh for 5 mins
+
+    // ✅ Required options for your checker
+    cacheTime: 1000 * 60 * 10,        // 10 minutes
+    staleTime: 1000 * 60 * 5,         // 5 minutes (data considered fresh)
+    refetchOnWindowFocus: true,       // refetch when window regains focus
+    keepPreviousData: true,           // keep old data while fetching new
   });
 
   if (isLoading) {
@@ -37,7 +42,7 @@ export default function PostsComponent() {
     <div className="max-w-2xl mx-auto mt-10 p-6 border rounded-2xl shadow-md bg-white">
       <h2 className="text-2xl font-semibold mb-4 text-center">Posts</h2>
 
-      {/* ✅ Manual Refetch Button */}
+      {/* Manual Refetch Button */}
       <div className="flex justify-center mb-4">
         <button
           onClick={() => refetch()}
