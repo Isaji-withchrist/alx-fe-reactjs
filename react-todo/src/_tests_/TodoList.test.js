@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import TodoList from "../components/TodoList";
+import App from "../App";
 
 describe("TodoList Component", () => {
   let todos;
@@ -37,4 +38,10 @@ describe("TodoList Component", () => {
     fireEvent.click(deleteButton);
     expect(deleteTodoMock).toHaveBeenCalledWith(1);
   });
+
+  test ("renders TodoList component", ()=>
+  {
+    render(<App/>);
+    expect(screen.getByText("My Todo App")).toBeInTheDocument();
+  })
 });
